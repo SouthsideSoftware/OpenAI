@@ -39,7 +39,7 @@ print("\n\n")
 prompt = f"{args.request}\n\n{original}"
 
 response = openai.Completion.create(
-  model="text-davinci-003",
+  model=models[args.model - 1],
   prompt=prompt,
   temperature=0.7,
   max_tokens=64,

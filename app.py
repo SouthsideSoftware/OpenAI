@@ -8,6 +8,7 @@ load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 models = ["text-ada-001", "text-babbage-001", "text-curie-001", "text-davinci-003"]
+costPerThousand = [.004, .005, .0020, .0200]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("request", help='The request text enclosed in double quotes.  Try: "Summarize this" or "Summarize this for Gen Z"')
@@ -49,3 +50,9 @@ response = openai.Completion.create(
 )
 
 print(response)
+
+tokens = response.usage.total_tokens;
+cost = (tokens/1000) * costPerThousand[args.model - 1]
+
+print(f"Cost ${cost}")
+print(f"Output: {response.choices[0].text}")

@@ -8,6 +8,10 @@
 
 * Install Python (version 3.10.7 or higher) from https://www.python.org/. You will need to know the path to the Python you installed or you can add it to your path variable. If you do not know how to do this, try a google search on "path to Python"
 * Open a terminal window (or command prompt on Windows) and change your current directory to the location of the source code you cloned
+* Type the following command to add the Python libraries needed to run the program to your machine.
+
+``pip install -r requirements.txt``
+
 * Type the following command and press "Enter".  If it fails to run and produce output or shows an error message, contact the author for help.  Make sure to replace "Path to Python on your machine" with the actual path.
 
 ``Path to Python ion your machine/python.exe ./app.py "summarize this" -o ./sample.txt``
